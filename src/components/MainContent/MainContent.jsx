@@ -42,7 +42,7 @@ const MainContent = () => {
         <Link className='img-box' to="/">All</Link>
         <Link className='img-box' to="/asian">Asian</Link>
         <Link className='img-box' to="/beer">Beer,wine & Spirit</Link>
-        <Link className='img-box' to="/beverage">Beverages</Link>
+        <Link className='img-box' to="/beverage">Beverage</Link>
         <Link className='img-box' to="/bread">Bread & Bakery</Link>
         <Link className='img-box' to="/dairy">Dairy & Eggs</Link>
         <Link className='img-box' to="/frozen">Frozen</Link>
