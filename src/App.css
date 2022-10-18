@@ -1,38 +1,160 @@
-.App {
+.header {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: 12px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-config {
+  width: 30%;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px #8888881c;
+  background-color: white;
+  color: rgba(7, 6, 6, 0.7);
+}
+
+*:focus {
+  outline: none;
+}
+
+.img-config {
+  width: 95%;
+  height: 350px;
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shopImg {
+  filter: brightness(0.6);
+}
+
+.shops-config {
+  width: 222px;
+  height: 143px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.img-box {
+  position: relative;
+  width: 135px;
+  color: antiquewhite;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: linear-gradient(147.67deg, #43b028 24.24%, #fbce2e 145.04%);
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+}
+
+.items-box {
+  width: 220px;
+  height: 310px;
+  margin-left: 43px;
+  box-shadow: 2px 2px #8888881c;
+  border: 1px solid #8888881c;
+  border-radius: 8px;
+}
+
+.itemBoxBtn {
+  background: rgb(67, 176, 40);
+  color: white;
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgb(67, 176, 40);
+  margin: 0 auto;
+  display: block;
+  text-decoration: none;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btnText {
+  margin: auto;
+  line-height: 1.9rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.footer {
+  width: 100%;
+  height: 220px;
+  flex-shrink: 0;
+  text-align: center;
+  background-color: rgba(22, 22, 26, 1);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  text-align: left;
+  padding: 5px;
+}
+
+.head-text {
+  position: relative;
+}
+.text-on-image {
+  position: absolute;
+  right: 35%;
+  bottom: 18%;
+}
+
+.logo {
+  height: 100px;
+  margin-left: 120px;
+}
+
+.logoHeading {
+  font-size: 35px;
+  font-weight: 600;
+  color: white;
+}
+
+.btn-white {
+  width: 140px;
+  height: 36px;
+  border: 1px solid white;
+  border-radius: 30px;
+  background: none;
+  color: white;
+}
+
+.qtyBoxParent {
+  font-family: arial;
+  font-size: 24px;
+  margin: 15px 0px 0px 66px;
+  width: 133px;
+  height: 50px;
+  border: 1px solid #d4d3d3;
+  border-radius: 30px;
+  position: relative;
+}
+
+.qtyBoxChild {
+  width: 50px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin: -25px 0 0 -25px; /* Apply negative top and left margins to truly center the element */
+}
+
+.information {
+  width: 565px;
+  color: #828282;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 17%;
 }
