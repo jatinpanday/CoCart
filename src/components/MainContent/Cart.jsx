@@ -2,9 +2,15 @@ import { faHeart, faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartIncrementUpdate } from '../../context/CartContext'
+import { useQtyCount, useQtyIncrementUpdate } from '../../context/ContextProvider'
 
 const Cart = () => {
-    const [count, setCount] = useState(1);
+    const qtyCount = useQtyCount();
+    const qtyIncrement = useQtyIncrementUpdate();
+    const cartIncrement = useCartIncrementUpdate();
+    console.log(cartIncrement)
+
 
     let vegetablesData = [
         {
@@ -33,24 +39,10 @@ const Cart = () => {
         }
     ]
 
-    function increment() {
-        setCount(function (prevCount) {
-            return (prevCount += 1);
-        });
-    }
-
-    function decrement() {
-        setCount(function (prevCount) {
-            if (prevCount > 0) {
-                return (prevCount -= 1);
-            } else {
-                return (prevCount = 0);
-            }
-        });
-    }
 
     return (
         <>
+
             <div style={{ display: "flex", marginTop: "60px" }}>
 
                 <div style={{ width: "50%", textAlign: "center" }}>
@@ -70,13 +62,13 @@ const Cart = () => {
                     <div style={{ fontSize: "16px", fontWeight: "400", color: "#828282", margin: "35px 68% 0px 0px" }}>Quantity</div>
                     <div style={{ margin: "0px 64% 0px 0px", display: "flex", width: "100%" }}>
                         <div className='qtyBoxParent'>
-                            <div className='qtyBoxChild'>{count}</div>
+                            <div className='qtyBoxChild'>{qtyCount}</div>
                         </div>
                         <div style={{ margin: "30px 0px 0px 20px", fontSize: "20px" }}>
-                            <FontAwesomeIcon icon={faMinusCircle} onClick={decrement}/>
-                            <FontAwesomeIcon icon={faPlusCircle} style={{ marginLeft: "20px" }} onClick={increment}/>
+                            <FontAwesomeIcon icon={faMinusCircle} onClick={qtyIncrement.qtyDecrement} />
+                            <FontAwesomeIcon icon={faPlusCircle} style={{ marginLeft: "20px" }} onClick={qtyIncrement.qtyIncrement} />
                         </div>
-                        <Link style={{ marginTop: "25px", width: "170px" }} to="/cart" className='itemBoxBtn'><span className='btnText'>ADD TO CART</span></Link>
+                        <Link style={{ marginTop: "25px", width: "170px" }} to="/cart" className='itemBoxBtn'><span className='btnText' onClick={qtyIncrement} >ADD TO CART</span></Link>
                     </div>
 
                     <div style={{ margin: "35px 56% 0px 0px" }}>
@@ -108,7 +100,7 @@ const Cart = () => {
                                 </div>
                                 <h4 style={{ textAlign: "center" }}>{item.title}</h4>
                                 <h5 style={{ textAlign: "center" }}>$ {item.price} ($10.34 / Kg)</h5>
-                                <button className='itemBoxBtn'>ADD TO CART</button>
+                                <button className='itemBoxBtn' onClick={() => cartIncrement.cartIncrement} >ADD TO CART</button>
                             </div>
                         </>
                     ))

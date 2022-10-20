@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHeart, faCartShopping, faStore, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { useCartCount } from '../context/CartContext';
 
 function Header() {
+
+    const cartCount = useCartCount();
+    console.log(cartCount)
+
     return (
         <div className='header'>
 
@@ -41,9 +45,10 @@ function Header() {
                     </select>
                 </div>
 
-                <div>
-                    <FontAwesomeIcon icon={faHeart} style={{ color: "#43B028", fontSize: "20px" }} />
+                <FontAwesomeIcon icon={faHeart} style={{ color: "#43B028", fontSize: "20px" }} />
+                <div class="wrapper">
                     <FontAwesomeIcon icon={faCartShopping} style={{ color: "#43B028", marginLeft: "25px", fontSize: "20px" }} />
+                    {cartCount == 0 ? "" : <span>{cartCount}</span> }
                 </div>
             </div>
         </div>

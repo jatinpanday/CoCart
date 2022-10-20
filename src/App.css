@@ -158,3 +158,19 @@ li {
   font-weight: 400;
   margin-left: 17%;
 }
+
+.wrapper {
+  position: relative;
+}
+.wrapper span {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  text-align: center;
+  font-size: 15px;
+  height: 16px;
+  color: white;
+  width: 16px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
